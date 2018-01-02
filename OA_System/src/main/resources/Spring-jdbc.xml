@@ -47,7 +47,7 @@
 			<!-- 指定mapping.xml的文件位置 -->
 			<property name="mapperLocations" value="classpath*:mapper/*.xml"/>
 			<!-- 指定pojo包 ,取别名-->
-			<property name="typeAliasesPackage" value="com.zmy.pojos"/>
+			<property name="typeAliasesPackage" value="com.oa.pojos"/>
 			
 			<!-- Mybatis的分页插件 -->
 			<property name="plugins">
@@ -70,7 +70,7 @@
 		<!-- Mybatis自动扫描dao -->
 		<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 			<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
-			<property name="basePackage" value="com.zmy.dao.mybatis"/>
+			<property name="basePackage" value="com.oa.dao.mybatis"/>
 		</bean>
 		
 		
@@ -82,7 +82,7 @@
 		</bean>
 		
 		<!-- JPA自动扫描dao -->
-		<jpa:repositories base-package="com.zmy.dao.jpa"/>
+		<jpa:repositories base-package="com.oa.dao.jpa"/>
 		
 		
 		

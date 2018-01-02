@@ -7,7 +7,7 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	<!-- 开启MVC注解 -->
-	<mvc:annotation-driven/>
+	<context:component-scan base-package="com.oa"></context:component-scan>
 	<!-- 视图解析器 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass"
@@ -21,7 +21,7 @@
 	<mvc:resources location="/WEB-INF/css/" mapping="/css/**" />
 	<mvc:resources location="/WEB-INF/plugs/" mapping="/plugs/**" />
 	<mvc:resources location="/WEB-INF/json/" mapping="/json/**" />
-		<mvc:resources location="/WEB-INF/resources/" mapping="/resources/**" />
+	<mvc:resources location="/WEB-INF/resources/" mapping="/resources/**" />
 		
 		
 		<!-- 配置上传文件的组件 -->
