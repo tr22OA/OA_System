@@ -1,23 +1,23 @@
 {
 	"id":1,
-	"text":"个人",
+	"text":"人事",
 	"url":"",
 	"icon":"",
 	"children":[{
 		"id":2,
-		"text":"流程发起",
+		"text":"组织架构",
 		"url":"1.jsp",
 		"icon":"&#xe658;",
 		"children":[]
 	},{
 		"id":3,
-		"text":"待办流程",
+		"text":"人事管理",
 		"url":"2.jsp",
 		"icon":"&#xe658;",
 		"children":[]
 	},{
 		"id":4,
-		"text":"我的考勤",
+		"text":"考勤管理",
 		"url":"index.jsp",
 		"icon":"&#xe658;",
 		"children":[{
@@ -34,7 +34,7 @@
 			"children":[]
 	}]},{
 		"id":5,
-		"text":"代办任务",
+		"text":"薪资管理",
 		"url":"dbrw",
 		"icon":"&#xe658;",
 		"children":[]

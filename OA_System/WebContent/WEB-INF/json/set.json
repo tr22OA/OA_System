@@ -1,0 +1,24 @@
+{
+	"id":1,
+	"text":"系统设置",
+	"url":"",
+	"icon":"",
+	"children":[{
+		"id":2,
+		"text":"权限修改",
+		"url":"1.jsp",
+		"icon":"&#xe658;",
+		"children":[]
+	},{
+		"id":3,
+		"text":"菜单添加",
+		"url":"2.jsp",
+		"icon":"&#xe658;",
+		"children":[]
+	},{
+		"id":4,
+		"text":"工作日设置",
+		"url":"index.jsp",
+		"icon":"&#xe658;"
+	}]
+}
