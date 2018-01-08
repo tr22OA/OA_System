@@ -1,0 +1,34 @@
+[{
+	"title" : "首页",
+	"icon" : "icon-computer",
+	"href" : "page/main.html"
+},{
+	"title" : "个人",
+	"icon" : "icon-text",
+	"href" : "page/news/newsList.html"
+},{
+	"title" : "人事",
+	"icon" : "&#xe64c;",
+	"href" : "page/links/linksList.html"
+},{
+	"title" : "系统",
+	"icon" : "&#xe631;",
+	"href" : "page/systemParameter/systemParameter.html"
+},{
+	"title" : "其他",
+	"icon" : "&#xe630;",
+	"href" : "",
+	"children" : [
+		{
+			"title" : "404页面",
+			"icon" : "&#xe61c;",
+			"href" : "page/404.html"
+		},
+		{
+			"title" : "登录",
+			"icon" : "&#xe609;",
+			"href" : "page/login/login.html",
+			"target" : "_blank"
+		}
+	]
+}]
