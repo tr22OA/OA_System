@@ -1,0 +1,28 @@
+{
+  "count": 10,
+  "data": [
+    {
+      "id": 1,
+      "menuName": "个人",
+      "menuUrl": "/gr",
+      "menuFather": "菜单",
+      "menuImg": "gr.png",
+      "menuIsvisable": "yes"
+    },
+    {
+       "id": 2,
+      "menuName": "人事",
+      "menuUrl": "/gr",
+      "menuFather": "系统5",
+      "menuImg": "admin.JPG",
+      "menuIsvisable": "yes"
+    },  {
+       "id": 3,
+      "menuName": "系统",
+      "menuUrl": "/gr",
+      "menuFather": "人事",
+      "menuImg": "gr.png",
+      "menuIsvisable": "yes"
+    }
+  ]
+}

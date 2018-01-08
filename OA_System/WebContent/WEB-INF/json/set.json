@@ -1,23 +1,23 @@
 {
 	"id":1,
-	"text":"系统设置",
+	"text":"系统",
 	"url":"",
 	"icon":"",
 	"children":[{
 		"id":2,
-		"text":"权限修改",
-		"url":"1.jsp",
+		"text":"权限设置",
+		"url":"powerSet.jsp",
 		"icon":"&#xe658;",
 		"children":[]
 	},{
 		"id":3,
-		"text":"菜单添加",
+		"text":"菜单角色",
 		"url":"2.jsp",
 		"icon":"&#xe658;",
 		"children":[]
 	},{
 		"id":4,
-		"text":"工作日设置",
+		"text":"工作设置",
 		"url":"index.jsp",
 		"icon":"&#xe658;"
 	}]
