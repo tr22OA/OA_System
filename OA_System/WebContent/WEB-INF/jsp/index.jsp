@@ -17,7 +17,7 @@
 <link rel="icon" href="favicon.ico">
 <link rel="stylesheet" href="../plugs/layui/css/layui.css" media="all" />
 <link rel="stylesheet"
-	href="//at.alicdn.com/t/font_tnyc012u2rlwstt9.css" media="all" />
+	href="//at.alicdn.com/t/font_526922_65mggzgbz92dfgvi.css" media="all" />
 <link rel="stylesheet" href="../css/main.css" media="all" />
 </head>
 <body class="main_body">
@@ -106,7 +106,7 @@
 									class="iconfont icon-huanfu"></i><cite>更换皮肤</cite></a>
 							</dd>
 							<dd>
-								<a href="page/login/login.html" class="signOut"><i
+								<a href="/login/logout" class="signOut"><i
 									class="iconfont icon-loginout"></i><cite>退出</cite></a>
 							</dd>
 						</dl></li>
