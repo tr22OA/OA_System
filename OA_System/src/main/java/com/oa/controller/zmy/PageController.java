@@ -15,7 +15,7 @@ import com.oa.service.zmy.MenuService;
  *
  */
 @Controller
-public class IndexController {
+public class PageController {
 
 	@Autowired
 	MenuService mService;
@@ -40,6 +40,25 @@ public class IndexController {
 	@RequestMapping("/powerSet")
 	public String toPowerSet(){
 		return "powerSet";
+	}
+	
+	/**
+	 * 登录界面
+	 * @return
+	 */
+	@RequestMapping("/login")
+	public String toLogin(){
+		return "login/login";
+	}
+	
+	/**
+	 * 菜单表单界面
+	 * @param m
+	 * @return
+	 */
+	@RequestMapping("/form")
+	public String toFrom(OaMenu m){
+		return "menuForm";
 	}
 	
 }
