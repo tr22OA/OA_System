@@ -1,5 +1,7 @@
 package com.oa.controller.zmy;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -34,16 +36,15 @@ public class MenuController {
 	 * @return
 	 */
 	@RequestMapping("/addMenu")
-	public @ResponseBody Boolean addMenu(HttpServletRequest req){
-		OaMenu m=new OaMenu(
+	public @ResponseBody Boolean addMenu(OaMenu m){
+	/*	OaMenu m=new OaMenu(
 				req.getParameter("menuId"),
 				req.getParameter("meuName"),
 				req.getParameter("menuLink"),
 				req.getParameter("menuFather"),
 				req.getParameter("menuIsvisible")
-				);
+				);*/
 		
-		System.out.println(m);
 		return mService.add(m);
 		
 	}
@@ -63,33 +64,34 @@ public class MenuController {
 	 * @param m
 	 * @return
 	 */
-	@RequestMapping("/delMenu")
+	@RequestMapping(value="/delMenu",params="menuId")
 	public @ResponseBody Boolean delMenu(OaMenu m){
 		return mService.del(m);
-		
 	}
-	
-	/**
-	 * 菜单表单URL
-	 * @param m
-	 * @return
-	 */
-	@RequestMapping("/form")
-	public String toFrom(OaMenu m){
-		return "menuForm";
-	}
-	
-
 	
 	/**
 	 * 根据父级菜单获取菜单
 	 * @param req
 	 * @return
 	 */
-	@RequestMapping("/menuList")
+	@RequestMapping(value="/menuList",params="fatherId")
 	public @ResponseBody List<Map<String,Object>> menuList(HttpServletRequest req){
-		System.out.println(req.getParameter("fatherId"));
-		return mService.getMenuList(Integer.parseInt(req.getParameter("fatherId")));
+		String fatherId=req.getParameter("fatherId");
+		List<Map<String,Object>> list=new ArrayList<>();
+		Map<String, Object> map=new HashMap<>();
+		if(fatherId.equals("")){
+			map.put("result", "fatherId为空");
+			list.add(map);
+			return list;
+		}
+		try{
+			return mService.getMenuList(Integer.parseInt(fatherId));
+		}catch(Exception e){
+			map.put("result", "非法请求");
+			list.add(map);
+			return list;
+		}
+		
 	}
 	
 	/**
