@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -10,7 +11,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.oa.dao.jpa.MenuDao;
+import com.oa.dao.jpa.OaMenuDao;
 import com.oa.pojos.OaMenu;
 
 
@@ -26,13 +27,13 @@ public class MenuService {
 	 * 
 	 */
 	@Autowired
-	MenuDao mDao;
+	OaMenuDao mDao;
 	
 	/**
 	 * @return 以树的结构返回所有菜单
 	 */
 	public List<Map<String,Object>> getMenuList(int fatherId){
-		List<OaMenu> list = mDao.findAll();
+		List<OaMenu> list = mDao.findMenus();
 		return createTree(list, fatherId);
 	}
 
@@ -115,12 +116,14 @@ public class MenuService {
 		return null;
 	}
 
+	
+	
 	/**
-	 * 获取头部菜单
+	 * 查找主菜单
 	 * @return
 	 */
 	public List<OaMenu> getMainMenu() {
-		return mDao.getMainMenu();
+		return mDao.findMianMenu();
 	}
 
 }
