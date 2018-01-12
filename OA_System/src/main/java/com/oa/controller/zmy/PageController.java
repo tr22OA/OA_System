@@ -61,4 +61,11 @@ public class PageController {
 		return "menuForm";
 	}
 	
+	
+	@RequestMapping("/menuForm")
+	public String tomenuForm(OaMenu m){
+		return "menuForm（Bootstrap）";
+	}
+	
+	
 }

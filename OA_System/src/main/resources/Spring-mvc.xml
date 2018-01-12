@@ -13,12 +13,12 @@
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**"/>
-			<mvc:mapping path="/resources/**"/>
-			<mvc:mapping path="/plugs/**"/>
-			<mvc:mapping path="/css/**"/>
-			<mvc:mapping path="/js/**"/>
-			<mvc:mapping path="/json/**"/>
-			<mvc:mapping path="/loginValiatorLogin/**"/>
+			<mvc:exclude-mapping path="/resources/**"/>
+			<mvc:exclude-mapping path="/plugs/**"/>
+			<mvc:exclude-mapping path="/css/**"/>
+			<mvc:exclude-mapping path="/js/**"/>
+			<mvc:exclude-mapping path="/json/**"/>
+			<mvc:exclude-mapping path="/loginValiatorLogin/**"/>
 			<bean class="com.oa.utils.LoginHandlerInterceptor"/>
 		</mvc:interceptor>
 	</mvc:interceptors>

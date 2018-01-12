@@ -13,16 +13,6 @@ public interface OaMenuDao extends JpaRepository<OaMenu, Integer>{
 	@Query("select new com.oa.pojos.OaMenu(m.menuId,m.menuFather,m.menuImg,m.menuIsvisible,"
 			+ "m.menuLink,m.meuName) from OaMenu m")
 	public List<OaMenu> findMenus();
-
-	/**
-	 * 根据分页获取菜单
-	 * @param page
-	 * @return
-	 */
-/*	@Query("select new com.oa.pojos.OaMenu(m.menuId,m.menuFather,m.menuImg,m.menuIsvisible,"
-			+ "m.menuLink,m.meuName) from OaMenu m order by desc")
-	public Page<OaMenu> findMenus(Pageable page);
-*/
 	/**
 	 * 查找父id为0的菜单
 	 * @return
