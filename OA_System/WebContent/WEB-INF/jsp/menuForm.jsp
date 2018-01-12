@@ -31,7 +31,7 @@
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">父级菜单</label>
-            <div class="layui-input-block layui-form">
+            <div class="layui-input-block layui-form" lay-filter="selFilter">
                 <select id="fatherMenu" name="menuFather" lay-verify="required">
                     <option value="0">无</option>
                 </select>
@@ -39,15 +39,19 @@
         </div>
         <div class="layui-form-item" id="uploadImg">
             <label class="layui-form-label">菜单图标</label>
-            <div class="layui-input-block layui-form">
-	            <select name="menuImg" type="button" class="layui-btn" id="test1">
-	                    <option value="0">无</option>
-	            </select>
-            </div>
+            <select name="img" type="button" class="layui-btn" id="test1">
+                    <i class="layui-icon">&#xe67c;</i>上传图片
+            </select>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">是否可见</label>
             <input name="menuIsvisible" class="layui-form-checkbox" type="checkbox">
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">备注</label>
+            <div class="layui-input-block">
+                <textarea  placeholder="请输入内容" class="layui-textarea"></textarea>
+            </div>
         </div>
         <!--表单提交-->
         <input id="submit" type="hidden" class="layui-btn" lay-submit lay-filter="formDemo"/>
@@ -64,6 +68,7 @@
         var layer=layui.layer;
         //监听表单提交
         form.on('submit(formDemo)', function(data){
+        	alert(1);
         	var url=undefined;
         	//判断表单是新增还是修改
 	        if($("#menuId").val()==''){
@@ -77,7 +82,6 @@
                     var index = parent.layer.getFrameIndex(window.name);
                     //先得到当前iframe层的索引
                     parent.layer.close(index); //再执行关闭!/
-                    parent.parent.location.reload();
             	});
             });
         });
