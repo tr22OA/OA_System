@@ -3,6 +3,12 @@
 	<persistence-unit name="OA_System"  transaction-type="RESOURCE_LOCAL">
 	<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 	<class>com.oa.pojos.OaMenu</class>
+	<class>com.oa.pojos.OaExamproject</class>
+	<class>com.oa.pojos.OaExamtask</class>
+	<class>com.oa.pojos.OaLevel</class>
+	<class>com.oa.pojos.OaPertemp</class>
+	<class>com.oa.pojos.OaScore</class>
+	<class>com.oa.pojos.OaScoredetail</class>
 	<properties>
                <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect" />
                <property name="hibernate.show_sql" value="true" />
