@@ -4,6 +4,9 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Date;
 
+import java.util.List;
+
+
 
 /**
  * The persistent class for the oa_flow database table.
@@ -17,50 +20,59 @@ public class OaFlow implements Serializable {
 
 	@Id
 	@Column(name="flow_id")
-	private int flowId;
 
-	@Column(name="emp_name")
-	private String empName;
+	private String flowId;
+
 
 	@Temporal(TemporalType.DATE)
 	@Column(name="flow_date")
 	private Date flowDate;
 
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="flow_enddate")
+	private Date flowEnddate;
+
 	@Column(name="flow_name")
 	private String flowName;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="flow_startdate")
+	private Date flowStartdate;
+
 
 	@Column(name="flow_state")
 	private int flowState;
 
 	@Column(name="flow_step")
-	private int flowStep;
+
+	private String flowStep;
+
+
 
 	@Column(name="flow_title")
 	private String flowTitle;
 
-	@Column(name="flow_type")
-	private int flowType;
 
-	@Column(name="turn_state")
-	private int turnState;
+	//bi-directional many-to-one association to OaEmp
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="emp_id")
+	private OaEmp oaEmp;
+
+	//bi-directional many-to-one association to OaTurn
+	@OneToMany(mappedBy="oaFlow")
+	private List<OaTurn> oaTurns;
+
 
 	public OaFlow() {
 	}
 
-	public int getFlowId() {
+	public String getFlowId() {
 		return this.flowId;
 	}
 
-	public void setFlowId(int flowId) {
+	public void setFlowId(String flowId) {
 		this.flowId = flowId;
-	}
-
-	public String getEmpName() {
-		return this.empName;
-	}
-
-	public void setEmpName(String empName) {
-		this.empName = empName;
 	}
 
 	public Date getFlowDate() {
@@ -71,12 +83,29 @@ public class OaFlow implements Serializable {
 		this.flowDate = flowDate;
 	}
 
+	public Date getFlowEnddate() {
+		return this.flowEnddate;
+	}
+
+	public void setFlowEnddate(Date flowEnddate) {
+		this.flowEnddate = flowEnddate;
+
+	}
+
 	public String getFlowName() {
 		return this.flowName;
 	}
 
 	public void setFlowName(String flowName) {
 		this.flowName = flowName;
+	}
+
+	public Date getFlowStartdate() {
+		return this.flowStartdate;
+	}
+
+	public void setFlowStartdate(Date flowStartdate) {
+		this.flowStartdate = flowStartdate;
 	}
 
 	public int getFlowState() {
@@ -87,11 +116,13 @@ public class OaFlow implements Serializable {
 		this.flowState = flowState;
 	}
 
-	public int getFlowStep() {
+
+	public String getFlowStep() {
 		return this.flowStep;
 	}
 
-	public void setFlowStep(int flowStep) {
+	public void setFlowStep(String flowStep) {
+
 		this.flowStep = flowStep;
 	}
 
@@ -103,36 +134,35 @@ public class OaFlow implements Serializable {
 		this.flowTitle = flowTitle;
 	}
 
-	public int getFlowType() {
-		return this.flowType;
+
+	public OaEmp getOaEmp() {
+		return this.oaEmp;
 	}
 
-	public void setFlowType(int flowType) {
-		this.flowType = flowType;
+	public void setOaEmp(OaEmp oaEmp) {
+		this.oaEmp = oaEmp;
 	}
 
-	public int getTurnState() {
-		return this.turnState;
+	public List<OaTurn> getOaTurns() {
+		return this.oaTurns;
 	}
 
-	public void setTurnState(int turnState) {
-		this.turnState = turnState;
+	public void setOaTurns(List<OaTurn> oaTurns) {
+		this.oaTurns = oaTurns;
 	}
 
-	public OaFlow(int flowId, String empName, Date flowDate, String flowName, int flowState, int flowStep,
-			String flowTitle, int flowType, int turnState) {
-		super();
-		this.flowId = flowId;
-		this.empName = empName;
-		this.flowDate = flowDate;
-		this.flowName = flowName;
-		this.flowState = flowState;
-		this.flowStep = flowStep;
-		this.flowTitle = flowTitle;
-		this.flowType = flowType;
-		this.turnState = turnState;
+	public OaTurn addOaTurn(OaTurn oaTurn) {
+		getOaTurns().add(oaTurn);
+		oaTurn.setOaFlow(this);
+
+		return oaTurn;
 	}
-	
-	
+
+	public OaTurn removeOaTurn(OaTurn oaTurn) {
+		getOaTurns().remove(oaTurn);
+		oaTurn.setOaFlow(null);
+
+		return oaTurn;
+	}
 
 }

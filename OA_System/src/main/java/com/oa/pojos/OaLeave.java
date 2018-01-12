@@ -17,22 +17,12 @@ public class OaLeave implements Serializable {
 
 	@Id
 	@Column(name="lea_id")
-	private int leaId;
+
+	private String leaId;
 
 	@Temporal(TemporalType.DATE)
-	@Column(name="apply_date")
-	private Date applyDate;
-
-	private String dept;
-
-	@Column(name="dept_approve")
-	private String deptApprove;
-
-	@Column(name="dept_approve_person")
-	private String deptApprovePerson;
-
-	@Temporal(TemporalType.DATE)
-	private Date enddate;
+	@Column(name="lea_applydate")
+	private Date leaApplydate;
 
 	@Column(name="lea_content")
 	private String leaContent;
@@ -40,75 +30,58 @@ public class OaLeave implements Serializable {
 	@Column(name="lea_day")
 	private int leaDay;
 
+	@Column(name="lea_deptch")
+	private int leaDeptch;
+
+	@Column(name="lea_emch")
+	private int leaEmch;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="lea_enddate")
+	private Date leaEnddate;
+
+	@Column(name="lea_managech")
+	private int leaManagech;
+
 	@Column(name="lea_name")
 	private String leaName;
 
-	@Column(name="lea_type")
-	private String leaType;
-
-	@Column(name="manager_approve")
-	private String managerApprove;
-
-	@Column(name="person_file")
-	private String personFile;
-
-	private String position;
-
-	@Column(name="position_approve_person")
-	private String positionApprovePerson;
 
 	@Temporal(TemporalType.DATE)
-	private Date startdate;
+	@Column(name="lea_startdate")
+	private Date leaStartdate;
+
+	@Column(name="lea_state")
+	private int leaState;
+
+	//bi-directional many-to-one association to OaEmp
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="emp_id")
+	private OaEmp oaEmp;
+
+	//bi-directional many-to-one association to OaVacation
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="vac_id")
+	private OaVacation oaVacation;
 
 	public OaLeave() {
 	}
 
-	public int getLeaId() {
+
+	public String getLeaId() {
 		return this.leaId;
 	}
 
-	public void setLeaId(int leaId) {
+	public void setLeaId(String leaId) {
 		this.leaId = leaId;
 	}
 
-	public Date getApplyDate() {
-		return this.applyDate;
+	public Date getLeaApplydate() {
+		return this.leaApplydate;
 	}
 
-	public void setApplyDate(Date applyDate) {
-		this.applyDate = applyDate;
-	}
-
-	public String getDept() {
-		return this.dept;
-	}
-
-	public void setDept(String dept) {
-		this.dept = dept;
-	}
-
-	public String getDeptApprove() {
-		return this.deptApprove;
-	}
-
-	public void setDeptApprove(String deptApprove) {
-		this.deptApprove = deptApprove;
-	}
-
-	public String getDeptApprovePerson() {
-		return this.deptApprovePerson;
-	}
-
-	public void setDeptApprovePerson(String deptApprovePerson) {
-		this.deptApprovePerson = deptApprovePerson;
-	}
-
-	public Date getEnddate() {
-		return this.enddate;
-	}
-
-	public void setEnddate(Date enddate) {
-		this.enddate = enddate;
+	public void setLeaApplydate(Date leaApplydate) {
+		this.leaApplydate = leaApplydate;
 	}
 
 	public String getLeaContent() {
@@ -127,6 +100,38 @@ public class OaLeave implements Serializable {
 		this.leaDay = leaDay;
 	}
 
+	public int getLeaDeptch() {
+		return this.leaDeptch;
+	}
+
+	public void setLeaDeptch(int leaDeptch) {
+		this.leaDeptch = leaDeptch;
+	}
+
+	public int getLeaEmch() {
+		return this.leaEmch;
+	}
+
+	public void setLeaEmch(int leaEmch) {
+		this.leaEmch = leaEmch;
+	}
+
+	public Date getLeaEnddate() {
+		return this.leaEnddate;
+	}
+
+	public void setLeaEnddate(Date leaEnddate) {
+		this.leaEnddate = leaEnddate;
+	}
+
+	public int getLeaManagech() {
+		return this.leaManagech;
+	}
+
+	public void setLeaManagech(int leaManagech) {
+		this.leaManagech = leaManagech;
+
+
 	public String getLeaName() {
 		return this.leaName;
 	}
@@ -135,52 +140,36 @@ public class OaLeave implements Serializable {
 		this.leaName = leaName;
 	}
 
-	public String getLeaType() {
-		return this.leaType;
+	public Date getLeaStartdate() {
+		return this.leaStartdate;
 	}
 
-	public void setLeaType(String leaType) {
-		this.leaType = leaType;
+	public void setLeaStartdate(Date leaStartdate) {
+		this.leaStartdate = leaStartdate;
 	}
 
-	public String getManagerApprove() {
-		return this.managerApprove;
+	public int getLeaState() {
+		return this.leaState;
 	}
 
-	public void setManagerApprove(String managerApprove) {
-		this.managerApprove = managerApprove;
+	public void setLeaState(int leaState) {
+		this.leaState = leaState;
 	}
 
-	public String getPersonFile() {
-		return this.personFile;
+	public OaEmp getOaEmp() {
+		return this.oaEmp;
 	}
 
-	public void setPersonFile(String personFile) {
-		this.personFile = personFile;
+	public void setOaEmp(OaEmp oaEmp) {
+		this.oaEmp = oaEmp;
 	}
 
-	public String getPosition() {
-		return this.position;
+	public OaVacation getOaVacation() {
+		return this.oaVacation;
 	}
 
-	public void setPosition(String position) {
-		this.position = position;
-	}
-
-	public String getPositionApprovePerson() {
-		return this.positionApprovePerson;
-	}
-
-	public void setPositionApprovePerson(String positionApprovePerson) {
-		this.positionApprovePerson = positionApprovePerson;
-	}
-
-	public Date getStartdate() {
-		return this.startdate;
-	}
-
-	public void setStartdate(Date startdate) {
-		this.startdate = startdate;
+	public void setOaVacation(OaVacation oaVacation) {
+		this.oaVacation = oaVacation;
 	}
 
 }
