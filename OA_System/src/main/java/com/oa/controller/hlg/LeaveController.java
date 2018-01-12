@@ -37,7 +37,7 @@ public class LeaveController {
 			String managerApprove,String personFile,String deptApprovePerson,String positionApprovePerson,String type){
 		OaLeave oaLeave=new OaLeave();
 		oaLeave.setLeaName(leaName);
-		oaLeave.setDept(dept);
+	/*	oaLeave.setDept(dept);
 		oaLeave.setPosition(position);
 		oaLeave.setLeaType(lea_type);
 			try {
@@ -52,7 +52,7 @@ public class LeaveController {
 		oaLeave.setManagerApprove(managerApprove);
 		oaLeave.setPersonFile(personFile);
 		oaLeave.setDeptApprovePerson(deptApprovePerson);
-		oaLeave.setPositionApprovePerson(positionApprovePerson);
+		oaLeave.setPositionApprovePerson(positionApprovePerson);*/
 		leaveService.addLeave(oaLeave,type);
 		System.out.println(leaName);
 		//System.out.println(applyDate);

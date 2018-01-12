@@ -33,14 +33,14 @@ public class LeaveService {
 		 leaveDao.save(oaLeave);
 		 //请假成功之后，在流程有中添加一条记录，并记录流程状态
 		 OaFlow oaFlow=new OaFlow();
-		 oaFlow.setEmpName(oaLeave.getLeaName());
+		/* oaFlow.setEmpName(oaLeave.getLeaName());
 		 if(type.equals("1")){
 			 oaFlow.setFlowName("请假申请");
 			 oaFlow.setFlowTitle("请假申请_"+oaLeave.getLeaName()+"_"+oaLeave.getDept());
 			 oaFlow.setFlowType(1);
 		 }
 		 oaFlow.setFlowState(1);
-		 oaFlow.setFlowStep(1);
+		 oaFlow.setFlowStep(1);*/
 		 oaFlow.setFlowDate(new Date());
 		 oaflowDao.save(oaFlow);
 		 

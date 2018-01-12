@@ -1,9 +1,10 @@
 package com.oa.controller.zmy;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.naming.spi.DirStateFactory.Result;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,20 +37,6 @@ public class MenuController {
 	 * @return
 	 */
 	@RequestMapping("/addMenu")
-<<<<<<< HEAD
-	public @ResponseBody Boolean addMenu(HttpServletRequest req){
-		OaMenu m=new OaMenu(
-				req.getParameter("menuId"),
-				req.getParameter("meuName"),
-				req.getParameter("menuLink"),
-				req.getParameter("menuFather"),
-				req.getParameter("menuIsvisible")
-				);
-		
-		System.out.println(m);
-		return mService.add(m);
-		
-=======
 	public @ResponseBody HashMap<String, Object> addMenu(HttpServletRequest req) {
 		/*
 		 * OaMenu m=new OaMenu( req.getParameter("menuId"),
@@ -78,7 +65,6 @@ public class MenuController {
 			ResultMap.putObj("success", result);
 			return ResultMap.putObj("msg", e.getMessage());
 		}
->>>>>>> zmy
 	}
 
 	/**
@@ -104,26 +90,6 @@ public class MenuController {
 	 * @param m
 	 * @return
 	 */
-<<<<<<< HEAD
-	@RequestMapping("/delMenu")
-	public @ResponseBody Boolean delMenu(OaMenu m){
-		return mService.del(m);
-		
-	}
-	
-	/**
-	 * 菜单表单URL
-	 * @param m
-	 * @return
-	 */
-	@RequestMapping("/form")
-	public String toFrom(OaMenu m){
-		return "menuForm";
-	}
-	
-
-	
-=======
 	@RequestMapping(value = "/delMenu", params = "menuId")
 	public @ResponseBody HashMap<String, Object> delMenu(OaMenu m) {
 		try {
@@ -136,20 +102,12 @@ public class MenuController {
 		}
 		
 	}
-
->>>>>>> zmy
 	/**
 	 * 根据父级菜单获取菜单
 	 * 
 	 * @param req
 	 * @return
 	 */
-<<<<<<< HEAD
-	@RequestMapping("/menuList")
-	public @ResponseBody List<Map<String,Object>> menuList(HttpServletRequest req){
-		System.out.println(req.getParameter("fatherId"));
-		return mService.getMenuList(Integer.parseInt(req.getParameter("fatherId")));
-=======
 	@RequestMapping(value = "/menuList", params = "fatherId")
 	public @ResponseBody List<Map<String, Object>> menuList(HttpServletRequest req) {
 		List<Map<String, Object>> list = new ArrayList<>();
@@ -167,8 +125,6 @@ public class MenuController {
 			list.add(ResultMap.getResultMap());
 			return list;
 		}
-
->>>>>>> zmy
 	}
 
 	/**
