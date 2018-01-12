@@ -54,6 +54,14 @@ public class OaMenu implements Serializable {
 	public OaMenu() {
 	}
 
+	public OaMenu(int menuFather, String menuImg, int menuIsvisible, String menuLink, String meuName) {
+		this.menuFather=menuFather;
+		this.menuImg=menuImg;
+		this.menuIsvisible=menuIsvisible;
+		this.menuLink=menuLink;
+		this.meuName=meuName;
+	}
+
 	public int getMenuId() {
 		return this.menuId;
 	}

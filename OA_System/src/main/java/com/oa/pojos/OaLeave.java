@@ -130,6 +130,7 @@ public class OaLeave implements Serializable {
 
 	public void setLeaManagech(int leaManagech) {
 		this.leaManagech = leaManagech;
+	}
 
 
 	public String getLeaName() {

@@ -15,7 +15,7 @@ import com.oa.service.zmy.MenuService;
  *
  */
 @Controller
-public class IndexController {
+public class PageController {
 
 	@Autowired
 	MenuService mService;
@@ -41,9 +41,7 @@ public class IndexController {
 	public String toPowerSet(){
 		return "powerSet";
 	}
-	
-<<<<<<< HEAD:OA_System/src/main/java/com/oa/controller/zmy/IndexController.java
-=======
+
 	/**
 	 * 登录界面
 	 * @return
@@ -68,7 +66,5 @@ public class IndexController {
 	public String tomenuForm(OaMenu m){
 		return "menuForm（Bootstrap）";
 	}
-	
-	
->>>>>>> zmy:OA_System/src/main/java/com/oa/controller/zmy/PageController.java
+
 }

@@ -12,7 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.oa.dao.jpa.MenuDao;
+import com.oa.dao.jpa.OaMenuDao;
 import com.oa.pojos.OaMenu;
 
 @Service
@@ -27,16 +27,6 @@ public class MenuService {
 	 * 
 	 */
 	@Autowired
-<<<<<<< HEAD
-	MenuDao mDao;
-	
-	/**
-	 * @return 以树的结构返回所有菜单
-	 */
-	public List<Map<String,Object>> getMenuList(int fatherId){
-		List<OaMenu> list = mDao.findAll();
-		return createTree(list, fatherId);
-=======
 	OaMenuDao mDao;
 
 	/**
@@ -50,7 +40,6 @@ public class MenuService {
 			e.printStackTrace();
 			return null;
 		}
->>>>>>> zmy
 	}
 
 	/**
@@ -161,13 +150,6 @@ public class MenuService {
 	}
 
 	/**
-<<<<<<< HEAD
-	 * 获取头部菜单
-	 * @return
-	 */
-	public List<OaMenu> getMainMenu() {
-		return mDao.getMainMenu();
-=======
 	 * 查找主菜单
 	 * 
 	 * @return
@@ -179,7 +161,6 @@ public class MenuService {
 			e.printStackTrace();
 			return null;
 		}
->>>>>>> zmy
 	}
 
 }

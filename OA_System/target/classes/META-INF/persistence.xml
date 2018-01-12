@@ -2,7 +2,21 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="OA_System"  transaction-type="RESOURCE_LOCAL">
 	<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-<<<<<<< HEAD
+	<class>com.oa.pojos.OaAttendance</class>
+	<class>com.oa.pojos.OaBalance</class>
+	<class>com.oa.pojos.OaCard</class>
+	<class>com.oa.pojos.OaCardborrow</class>
+	<class>com.oa.pojos.OaContract</class>
+	<class>com.oa.pojos.OaDept</class>
+	<class>com.oa.pojos.OaDismission</class>
+	<class>com.oa.pojos.OaEmp</class>
+	<class>com.oa.pojos.OaExamproject</class>
+	<class>com.oa.pojos.OaExamtask</class>
+	<class>com.oa.pojos.OaFlow</class>
+	<class>com.oa.pojos.OaFormal</class>
+	<class>com.oa.pojos.OaJob</class>
+	<class>com.oa.pojos.OaLeave</class>
+	<class>com.oa.pojos.OaLevel</class>
 	<class>com.oa.pojos.OaMenu</class>
 	<class>com.oa.pojos.OaMove</class>
 	<class>com.oa.pojos.OaOvertimecode</class>
@@ -19,18 +33,7 @@
 	<class>com.oa.pojos.OaSchedulecontent</class>
 	<class>com.oa.pojos.OaScheduletype</class>
 	<class>com.oa.pojos.OaScore</class>
-	<class>com.oa.pojos.OaScoredetail</class>>>>>>>> master
-	<class>com.oa.pojos.OaMenu</class>
-	<class>com.oa.pojos.OaMove</class>
-	<class>com.oa.pojos.OaOvertimecode</class>
-	<class>com.oa.pojos.OaOvertimetype</class>
-	<class>com.oa.pojos.OaPassword</class>
-	<class>com.oa.pojos.OaPersonalbook</class>
-	<class>com.oa.pojos.OaPertemp</class>
-	<class>com.oa.pojos.OaRap</class>
-	<class>com.oa.pojos.OaRole</class>
-	<class>com.oa.pojos.OaSalaryitme</class>
-	<class>com.oa.pojos.OaSalaryrecord</class>
+	<class>com.oa.pojos.OaScoredetail</class>
 	<class>com.oa.pojos.OaSystemlog</class>
 	<class>com.oa.pojos.OaTelgroup</class>
 	<class>com.oa.pojos.OaTrainplan</class>
@@ -38,8 +41,6 @@
 	<class>com.oa.pojos.OaTurn</class>
 	<class>com.oa.pojos.OaVacation</class>
 	<class>com.oa.pojos.OaWhereabout</class>
-=======
->>>>>>> zmy
 	<properties>
                <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect" />
                <property name="hibernate.show_sql" value="true" />
