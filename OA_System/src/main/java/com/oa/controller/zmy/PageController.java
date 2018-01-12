@@ -41,7 +41,7 @@ public class PageController {
 	public String toPowerSet(){
 		return "powerSet";
 	}
-	
+
 	/**
 	 * 登录界面
 	 * @return
@@ -66,6 +66,5 @@ public class PageController {
 	public String tomenuForm(OaMenu m){
 		return "menuForm（Bootstrap）";
 	}
-	
-	
+
 }

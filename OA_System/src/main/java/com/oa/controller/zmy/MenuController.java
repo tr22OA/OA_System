@@ -39,12 +39,6 @@ public class MenuController {
 	 */
 	@RequestMapping("/addMenu")
 	public @ResponseBody HashMap<String, Object> addMenu(HttpServletRequest req) {
-		/*
-		 * OaMenu m=new OaMenu( req.getParameter("menuId"),
-		 * req.getParameter("meuName"), req.getParameter("menuLink"),
-		 * req.getParameter("menuFather"), req.getParameter("menuIsvisible") );
-		 * 
-		 */
 		Boolean result = false;
 		try {
 			String meuName = req.getParameter("meuName");
@@ -103,7 +97,6 @@ public class MenuController {
 		}
 		
 	}
-
 	/**
 	 * 根据父级菜单获取菜单
 	 * 
@@ -127,7 +120,6 @@ public class MenuController {
 			list.add(ResultMap.getResultMap());
 			return list;
 		}
-
 	}
 
 	/**

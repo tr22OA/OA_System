@@ -42,16 +42,17 @@
 		<div class="layui-row">
 			<div class="layui-col-xs2">
 				<div><button id="addMenu" class="layui-btn layui-btn-lg" style="margin-left: 20px;"><i class="iconfont icon-add"></i>添加菜单</button></div>
-				<ul class="easyui-tree" data-options="url:'/menuList?fatherId=0',method:'post',animate:true,lines:true"></ul>
+				<ul class="easyui-tree" data-options="url:'',method:'get',animate:true,lines:true"></ul>
 			</div>
 			<table class="layui-hide layui-col-xs10" id="table_menu" lay-filter="menu"></table>
 		</div>
 		<script type="text/html" id="bar">
+			<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
 			<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
 			<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 		</script>
 		<script type="text/html" id="imgUrl">
-			<div><i class="iconfont icon-loginout"></i></<div>
+			<img src="../resources/admin.JPG" />
 		</script>
 		<script>
 		//定义变量
@@ -83,7 +84,7 @@
 						width: 80
 					}, {
 						field: 'menuImg',
-						title: '菜单图标',
+						title: '菜单图片',
 						width: 80,
 						templet: '#imgUrl'
 					}, {
@@ -104,11 +105,12 @@
 				page: true,
 				height: "full"
 			});
+			
 			//添加的点击事件
 			$("#addMenu").click(function() {
 				layer.open({
 					type: 2,
-					content: "/form",/*弹窗内容*/
+					content: "/form",
 					area: ['450px', '90%'],
 					yes: function(index) {
 						var form = layer.getChildFrame('#addForm', index);
@@ -118,6 +120,7 @@
 				});
 
 			});
+			
 			//表格内的工具条的点击事件
 			table.on('tool(menu)',function(obj){
 				var data=obj.data;
@@ -130,6 +133,7 @@
 					del(obj);
 					break;
 				}
+				
 				//编辑点击事件
 				function edit(data){
 					layer.open({
@@ -140,7 +144,9 @@
 					before:function(){
 					},
 					success:function(layero,index){
+						alert("success");
 						var body = layer.getChildFrame('body', index);
+						console.info(data);
 						var menuId=body.find('input[name=menuId]');
 						menuId.val(data.menuId);
 						var menuName=body.find('input[name=meuName]');
@@ -155,21 +161,31 @@
 								dds[i].click();return;
 							}
 						}
+						var munuCkeckBox=body.find('div.layui-form-checkbox');
+						if(data.menuIsvisable=='yes'){
+							munuCkeckBox.click();
+						}
+						var img=body.find('#uploadImg');
+						if(data.menuImg!=undefined){
+							img.append('<img src="../resources/'+data.menuImg+'" style="height:30px;weight:30px">');
+						}
 					},
 					yes: function(index) {
+						alert("yes");
 						var form = layer.getChildFrame('#addForm', index);
 						var submit = form.find('#submit');
 						submit.click();
 					}
 				});
+
 				}
+				
 				//删除点击事件
 				function del(obj){
 					var index=layer.load();
 					$.post('/delMenu',obj.data,function(){
 						layer.close(index);
 						obj.del();
-						parent.location.reload();
 					})
 				}
 				//重新渲染表单
