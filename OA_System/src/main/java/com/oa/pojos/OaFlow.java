@@ -3,7 +3,9 @@ package com.oa.pojos;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Date;
+
 import java.util.List;
+
 
 
 /**
@@ -18,11 +20,14 @@ public class OaFlow implements Serializable {
 
 	@Id
 	@Column(name="flow_id")
+
 	private String flowId;
+
 
 	@Temporal(TemporalType.DATE)
 	@Column(name="flow_date")
 	private Date flowDate;
+
 
 	@Temporal(TemporalType.DATE)
 	@Column(name="flow_enddate")
@@ -35,14 +40,19 @@ public class OaFlow implements Serializable {
 	@Column(name="flow_startdate")
 	private Date flowStartdate;
 
+
 	@Column(name="flow_state")
 	private int flowState;
 
 	@Column(name="flow_step")
+
 	private String flowStep;
+
+
 
 	@Column(name="flow_title")
 	private String flowTitle;
+
 
 	//bi-directional many-to-one association to OaEmp
 	@ManyToOne(fetch=FetchType.LAZY)
@@ -52,6 +62,7 @@ public class OaFlow implements Serializable {
 	//bi-directional many-to-one association to OaTurn
 	@OneToMany(mappedBy="oaFlow")
 	private List<OaTurn> oaTurns;
+
 
 	public OaFlow() {
 	}
@@ -78,6 +89,7 @@ public class OaFlow implements Serializable {
 
 	public void setFlowEnddate(Date flowEnddate) {
 		this.flowEnddate = flowEnddate;
+
 	}
 
 	public String getFlowName() {
@@ -104,11 +116,13 @@ public class OaFlow implements Serializable {
 		this.flowState = flowState;
 	}
 
+
 	public String getFlowStep() {
 		return this.flowStep;
 	}
 
 	public void setFlowStep(String flowStep) {
+
 		this.flowStep = flowStep;
 	}
 
@@ -119,6 +133,7 @@ public class OaFlow implements Serializable {
 	public void setFlowTitle(String flowTitle) {
 		this.flowTitle = flowTitle;
 	}
+
 
 	public OaEmp getOaEmp() {
 		return this.oaEmp;

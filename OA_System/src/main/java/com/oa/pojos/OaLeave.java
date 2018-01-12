@@ -17,6 +17,7 @@ public class OaLeave implements Serializable {
 
 	@Id
 	@Column(name="lea_id")
+
 	private String leaId;
 
 	@Temporal(TemporalType.DATE)
@@ -45,6 +46,7 @@ public class OaLeave implements Serializable {
 	@Column(name="lea_name")
 	private String leaName;
 
+
 	@Temporal(TemporalType.DATE)
 	@Column(name="lea_startdate")
 	private Date leaStartdate;
@@ -64,6 +66,7 @@ public class OaLeave implements Serializable {
 
 	public OaLeave() {
 	}
+
 
 	public String getLeaId() {
 		return this.leaId;
@@ -127,7 +130,7 @@ public class OaLeave implements Serializable {
 
 	public void setLeaManagech(int leaManagech) {
 		this.leaManagech = leaManagech;
-	}
+
 
 	public String getLeaName() {
 		return this.leaName;

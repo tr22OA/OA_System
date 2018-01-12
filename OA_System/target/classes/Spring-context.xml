@@ -21,4 +21,5 @@
 		<import resource="classpath:Spring-mvc.xml"/>
 		<import resource="classpath:Spring-jdbc.xml"/>
 		
+		<bean id="menuService" class="com.oa.service.zmy.MenuService"/>
 </beans>

@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -21,4 +22,6 @@
 		<import resource="classpath:Spring-mvc.xml"/>
 		<import resource="classpath:Spring-jdbc.xml"/>
 		
+		<bean id="menuService" class="com.oa.service.zmy.MenuService"/>
 </beans>
+
