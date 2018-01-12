@@ -141,13 +141,13 @@ layui.config({
 	tab.render();
 
 	//锁屏
-	function lockPage(){
+	function lockPage(name,url){
 		layer.open({
 			title : false,
 			type : 1,
 			content : '	<div class="admin-header-lock" id="lock-box">'+
-							'<div class="admin-header-lock-img"><img src="images/face.jpg"/></div>'+
-							'<div class="admin-header-lock-name" id="lockUserName">请叫我马哥</div>'+
+							'<div class="admin-header-lock-img"><img src="'+url+'"/></div>'+
+							'<div class="admin-header-lock-name" id="lockUserName">'+name+'</div>'+
 							'<div class="input_btn">'+
 								'<input type="password" class="admin-header-lock-input layui-input" autocomplete="off" placeholder="请输入密码解锁.." name="lockPwd" id="lockPwd" />'+
 								'<button class="layui-btn" id="unlock">解锁</button>'+
@@ -160,12 +160,19 @@ layui.config({
 		$(".admin-header-lock-input").focus();
 	}
 	$(".lockcms").on("click",function(){
+		var li=$(this).next()[0];
+		var url=$(li).find('img').attr('src');
+		var name=$(li)[0].innerText;
 		window.sessionStorage.setItem("lockcms",true);
-		lockPage();
+		window.sessionStorage.setItem("url",url);
+		window.sessionStorage.setItem("name",name);
+		lockPage(name,url);
 	})
 	// 判断是否显示锁屏
 	if(window.sessionStorage.getItem("lockcms") == "true"){
-		lockPage();
+		var name=window.sessionStorage.getItem("name");
+		var url=window.sessionStorage.getItem("url");
+		lockPage(name,url);
 	}
 	// 解锁
 	$("body").on("click","#unlock",function(){

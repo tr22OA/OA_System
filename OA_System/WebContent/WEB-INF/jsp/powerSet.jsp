@@ -112,7 +112,6 @@
 					type: 2,
 					content: "/form",
 					area: ['450px', '90%'],
-					btn:['确定', '取消'],
 					yes: function(index) {
 						var form = layer.getChildFrame('#addForm', index);
 						var submit = form.find('#submit');

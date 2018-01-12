@@ -90,7 +90,7 @@
 							class="iconfont icon-lock1"></i><cite>锁屏</cite></a></li>
 					<li class="layui-nav-item" pc><a href="javascript:;"> <img
 							src="../resources/admin.JPG" class="layui-circle" width="35"
-							height="35"> <cite>请叫老司机</cite>
+							height="35"> <cite>${emp.empName}</cite>
 					</a>
 						<dl class="layui-nav-child">
 							<dd>
@@ -118,7 +118,7 @@
 			<div class="user-photo">
 				<a class="img" title="我的头像"><img src="../resources/admin.JPG"></a>
 				<p>
-					你好！<span class="userName">请叫老司机</span>, 欢迎登录
+					你好！<span class="userName">${emp.empName}</span>, 欢迎登录
 				</p>
 			</div>
 			<div class="navBar layui-side-scroll">
@@ -184,7 +184,6 @@
 							var menu;
 							element.on('nav(topNav)', function(elem) {
 								var fatherId=elem.find('a').attr('nav-id');
-								console.info(fatherId);
 								tab.render(fatherId);
 							})
 							element.render();

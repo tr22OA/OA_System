@@ -26,7 +26,6 @@ layui.define(["element","jquery"],function(exports){
 		}
 		$.get(this.tabConfig.url,{"fatherId":fatherId},function(data){
 			//显示左侧菜单
-			console.info(data);
 				var _this = this;
 				$(".navBar").html(navBar(data)).height($(window).height()-245);
 					element.init();  //初始化页面元素

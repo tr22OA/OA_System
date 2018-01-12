@@ -42,4 +42,33 @@ public class IndexController {
 		return "powerSet";
 	}
 	
+<<<<<<< HEAD:OA_System/src/main/java/com/oa/controller/zmy/IndexController.java
+=======
+	/**
+	 * 登录界面
+	 * @return
+	 */
+	@RequestMapping("/login")
+	public String toLogin(){
+		return "login/login";
+	}
+	
+	/**
+	 * 菜单表单界面
+	 * @param m
+	 * @return
+	 */
+	@RequestMapping("/form")
+	public String toFrom(OaMenu m){
+		return "menuForm";
+	}
+	
+	
+	@RequestMapping("/menuForm")
+	public String tomenuForm(OaMenu m){
+		return "menuForm（Bootstrap）";
+	}
+	
+	
+>>>>>>> zmy:OA_System/src/main/java/com/oa/controller/zmy/PageController.java
 }
