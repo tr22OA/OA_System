@@ -2,7 +2,6 @@ package com.oa.pojos;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.List;
 
 
 /**
@@ -34,32 +33,17 @@ public class OaMenu implements Serializable {
 	@Column(name="meu_name")
 	private String meuName;
 
-	//bi-directional many-to-many association to OaDept
-	@ManyToMany
-	@JoinTable(
-		name="dept_power"
-		, joinColumns={
-			@JoinColumn(name="menu_id")
-			}
-		, inverseJoinColumns={
-			@JoinColumn(name="dept_id")
-			}
-		)
-	private List<OaDept> oaDepts;
-
 	public OaMenu() {
 	}
 
-	
-	public OaMenu(int menuId, int menuFather, String menuImg, int menuIsvisible, String menuLink, String meuName) {
-		this.menuId = menuId;
-		this.menuFather = menuFather;
-		this.menuImg = menuImg;
-		this.menuIsvisible = menuIsvisible;
-		this.menuLink = menuLink;
-		this.meuName = meuName;
+	public OaMenu(String menuId, String meuName, String menuLink, String menuFather, String menuIsvisible) {
+		if(menuId!=null&&!"".equals(menuId))this.menuId=Integer.parseInt(menuId);
+		this.meuName=meuName;
+		this.menuLink=menuLink;
+		if(menuFather!=null&&!"".equals(menuFather))this.menuFather=Integer.parseInt(menuFather);
+		if(menuIsvisible!=null&&!"".equals(menuIsvisible))this.menuIsvisible=Integer.parseInt(menuIsvisible);
+		
 	}
-
 
 	public int getMenuId() {
 		return this.menuId;
@@ -109,12 +93,11 @@ public class OaMenu implements Serializable {
 		this.meuName = meuName;
 	}
 
-	public List<OaDept> getOaDepts() {
-		return this.oaDepts;
+	@Override
+	public String toString() {
+		return "OaMenu [menuId=" + menuId + ", menuFather=" + menuFather + ", menuImg=" + menuImg + ", menuIsvisible="
+				+ menuIsvisible + ", menuLink=" + menuLink + ", meuName=" + meuName + "]";
 	}
 
-	public void setOaDepts(List<OaDept> oaDepts) {
-		this.oaDepts = oaDepts;
-	}
-
+	
 }
