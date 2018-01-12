@@ -38,12 +38,6 @@ public class MenuController {
 	 */
 	@RequestMapping("/addMenu")
 	public @ResponseBody HashMap<String, Object> addMenu(HttpServletRequest req) {
-		/*
-		 * OaMenu m=new OaMenu( req.getParameter("menuId"),
-		 * req.getParameter("meuName"), req.getParameter("menuLink"),
-		 * req.getParameter("menuFather"), req.getParameter("menuIsvisible") );
-		 * 
-		 */
 		Boolean result = false;
 		try {
 			String meuName = req.getParameter("meuName");

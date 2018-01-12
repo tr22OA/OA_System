@@ -60,8 +60,9 @@ public class OaMenu implements Serializable {
 		this.menuIsvisible=menuIsviible;
 		this.menuLink=menuLink;
 		this.meuName=meuName;
-		
 	}
+		
+
 
 	public int getMenuId() {
 		return this.menuId;

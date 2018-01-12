@@ -41,7 +41,6 @@ public class PageController {
 	public String toPowerSet(){
 		return "powerSet";
 	}
-	
 	/**
 	 * 登录界面
 	 * @return
