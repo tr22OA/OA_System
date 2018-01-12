@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>AO办公系统</title>
+<title>OA办公系统</title>
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta http-equiv="Access-Control-Allow-Origin" content="*">
@@ -25,7 +25,7 @@
 		<!-- 顶部 -->
 		<div class="layui-header header">
 			<div class="layui-main">
-				<a href="#" class="logo">AO办公系统</a>
+				<a href="#" class="logo">OA办公系统</a>
 				<!-- 显示/隐藏菜单 -->
 				<a href="javascript:;" class="iconfont hideMenu icon-menu1"></a>
 				<!-- 搜索 -->
@@ -156,7 +156,7 @@
 				</ul>
 				<div class="layui-tab-content clildFrame">
 					<div class="layui-tab-item layui-show">
-						<iframe src="/powerSet"></iframe>
+						<iframe src="/to_Scheduletype"></iframe>
 					</div>
 				</div>
 			</div>

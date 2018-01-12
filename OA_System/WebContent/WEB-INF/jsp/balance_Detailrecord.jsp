@@ -1,0 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>加班结余——明细记录</title>
+<link rel="stylesheet" type="text/css" href="../plugs/layui/css/layui.css" />
+<script src="../plugs/layui/layui.js"></script> 
+<style>
+	body{padding:15px;background-color:#F1F6FF;}
+	th{width:130px;text-align:center;height:30px;background-color:#F2F2F2;border:1px solid #e6e6e6;color:#666;}}
+</style>
+</head>
+<body>
+	<div>
+		<table id="">
+			
+			<tr id="">
+				<th class="">加班结余编号</th>
+				<th class="">加班结余天数</th>
+				<th class="">人员</th>
+				<th class="">操作人</th>
+				<th class="">操作日期</th>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
